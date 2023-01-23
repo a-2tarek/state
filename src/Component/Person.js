@@ -2,29 +2,36 @@ import { Component } from "react";
 import React, {useState} from "react";
 
 
-export default class Person extends Component{
-    constructor (props){
-        super(props);
-        this.state = {
-            fullName : "abdilrahman tarek",
-            bio : "my bio",
-            imgSrc : "logo192.png",
-            prffission : "programming",
-            boolean : false
-        }
-    }
-         toggle =() =>{
-            return(
-                this.state.boolean = boolean
-            )
-           
+export default function Person(){ 
+           const[fullName, setfullName] = useState("abdilrahman tarek") ;
+           const[bio, setio] = useState("bio") ;
+           const[imgSrc, setimgsrc] = useState("logo192.png") ;
+           const[proffission, setproffission] = useState("programming") ;
+           const[show, setshow] = useState(false) ;
+    
+    
+ const change = () => {
+                
+               setshow(!show)
          }
-
-    render (){
-        return(
+return (
+    <>
+           
+           {show&& 
+           <div>
+           <h3>{bio}</h3>
+           <h3>{fullName}</h3>
+           <h3>{imgSrc}</h3>
+           <h3>{proffission}</h3>
+           </div>
+           }
+           
         <div>
-            <button onClick={toggle}> change </button>
+            <button onClick={change}> toggle </button>
         </div>
-        )
-    }
+        </>
+)
+   
+           
+       
 }
